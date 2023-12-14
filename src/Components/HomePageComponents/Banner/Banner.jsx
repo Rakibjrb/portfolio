@@ -8,7 +8,7 @@ const Banner = () => {
   return (
     <div className="overflow-x-hidden w-full h-[768px] md:h-[600px] xl:h-[720px] font-lato bg-gradient-to-b from-[#000] to-[#23c0d2]">
       <div className="max-w-7xl mx-auto px-5 py-10 md:py-0 xl:px-0 h-full flex flex-col-reverse md:flex-row gap-5 items-center justify-center">
-        <div className="lg:w-3/5 text-white space-y-4 text-center md:text-left mt-5 md:mt-0">
+        <div className="lg:w-[70%] text-white space-y-4 text-center md:text-left mt-5 md:mt-0">
           <h3 className="text-3xl lg:text-4xl">Hello, {"I'ts"} Me</h3>
           <h1 className="text-5xl lg:text-6xl font-extrabold">Rakibul Hasan</h1>
           <h2 className="text-3xl lg:text-4xl">
@@ -32,7 +32,7 @@ const Banner = () => {
         <div className="relative">
           <div>
             <img
-              className="animate-spin w-[300px] lg:w-[380px]"
+              className="spin-animation w-[300px] lg:w-[380px]"
               src={bgshape}
               alt="background shape"
             />
