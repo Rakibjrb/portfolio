@@ -1,5 +1,5 @@
 .spin-animation {
-  animation: rotatefull 8s linear infinite 8s;
+  animation: rotatefull 8s linear infinite;
 }
 
 @keyframes rotatefull {
