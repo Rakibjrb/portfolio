@@ -50,9 +50,9 @@ const Nav = () => {
               {links}
             </ul>
             <ul
-              className={`absolute top-20 right-0 ${
-                mobileMenu ? "" : "-top-[9999px]"
-              } transition-all duration-300 z-50 w-[300px] absolute top-20 right-0 lg:hidden menu-vertical px-5 py-8 font-lato font-semibold uppercase bg-[#494949] rounded-l-lg space-y-5`}
+              className={`absolute right-0 ${
+                mobileMenu ? "top-20" : "-top-[9999px]"
+              } bg-[#00000061] transition-all duration-300 z-50 w-[300px] text-center lg:hidden menu-vertical px-5 py-8 font-lato font-semibold uppercase border rounded-lg space-y-5`}
             >
               {links}
             </ul>
