@@ -42,8 +42,8 @@ const Banner = () => {
               <FaFacebookF className=" hover:text-white border border-[#23c0d2] w-12 h-12 p-3 rounded-full hover:bg-[#3b5998] hover:border-none transition-all duration-500" />
             </a>
           </div>
-          <button className="btn border border-white uppercase bg-[#23c0d2] text-black hover:text-white transition-all duration-300">
-            Download CV
+          <button className="btn uppercase bg-[#23c0d2] text-black hover:text-white transition-all duration-300">
+            Hire Me
           </button>
         </div>
         <div className="relative">
