@@ -1,0 +1,62 @@
+[
+  {
+    "id": "01",
+    "img": "https://github.com/Rakibjrb/portfolio/blob/master/src/assets/techandtools/html.png?raw=true",
+    "technology": "HTML"
+  },
+  {
+    "id": "02",
+    "img": "https://github.com/Rakibjrb/portfolio/blob/master/src/assets/techandtools/css.png?raw=true",
+    "technology": "CSS"
+  },
+  {
+    "id": "03",
+    "img": "https://github.com/Rakibjrb/portfolio/blob/master/src/assets/techandtools/javascript.png?raw=true",
+    "technology": "JavaScript"
+  },
+  {
+    "id": "04",
+    "img": "https://github.com/Rakibjrb/portfolio/blob/master/src/assets/techandtools/react.png?raw=true",
+    "technology": "React"
+  },
+  {
+    "id": "05",
+    "img": "https://github.com/Rakibjrb/portfolio/blob/master/src/assets/techandtools/firebase.png?raw=true",
+    "technology": "Firebase"
+  },
+  {
+    "id": "06",
+    "img": "https://github.com/Rakibjrb/portfolio/blob/master/src/assets/techandtools/tailwindcss.png?raw=true",
+    "technology": "Tailwindcss"
+  },
+  {
+    "id": "07",
+    "img": "https://github.com/Rakibjrb/portfolio/blob/master/src/assets/techandtools/nodejs.png?raw=true",
+    "technology": "Node"
+  },
+  {
+    "id": "08",
+    "img": "https://github.com/Rakibjrb/portfolio/blob/master/src/assets/techandtools/nodejs.png?raw=true",
+    "technology": "Express"
+  },
+  {
+    "id": "09",
+    "img": "https://github.com/Rakibjrb/portfolio/blob/master/src/assets/techandtools/git.png?raw=true",
+    "technology": "Git"
+  },
+  {
+    "id": "10",
+    "img": "https://github.com/Rakibjrb/portfolio/blob/master/src/assets/techandtools/github.png?raw=true",
+    "technology": "Github"
+  },
+  {
+    "id": "11",
+    "img": "https://github.com/Rakibjrb/portfolio/blob/master/src/assets/techandtools/figma.png?raw=true",
+    "technology": "Figma"
+  },
+  {
+    "id": "12",
+    "img": "https://github.com/Rakibjrb/portfolio/blob/master/src/assets/techandtools/chromeDev.png?raw=true",
+    "technology": "Chrome Dev Tools"
+  }
+]
