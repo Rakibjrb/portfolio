@@ -3,8 +3,8 @@ import "./tech.css";
 
 const Technology = ({ tech }) => {
   return (
-    <div className="w-44 bg-white p-4 rounded-lg mr-10">
-      <img className="w-[100px] mx-auto" src={tech.img} alt="tech" />
+    <div className="w-32 h-[100px] flex justify-center items-center bg-white rounded-lg mr-10">
+      <img className="w-[60px] mx-auto" src={tech.img} alt="tech" />
     </div>
   );
 };
