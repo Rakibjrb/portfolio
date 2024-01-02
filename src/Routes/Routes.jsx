@@ -1,6 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main/Main";
 import Home from "../Pages/Home/Home";
+import Dashboard from "../Layout/Admin/Dashboard";
+import PrivateRoutes from "./PrivateRoutes";
+import AdminLogin from "../Pages/AdminLogin/AdminLogin";
 
 const router = createBrowserRouter([
   {
@@ -12,6 +15,18 @@ const router = createBrowserRouter([
         element: <Home />,
       },
     ],
+  },
+  {
+    path: "/admin-login",
+    element: <AdminLogin />,
+  },
+  {
+    path: "dashboard",
+    element: (
+      <PrivateRoutes>
+        <Dashboard />
+      </PrivateRoutes>
+    ),
   },
 ]);
 
