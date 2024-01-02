@@ -1,5 +1,5 @@
 .tech-container {
-  padding: 30px 10px 60px;
+  padding: 30px 10px 30px;
   width: 100%;
   background: linear-gradient(
     90deg,
@@ -7,4 +7,39 @@
     rgb(49, 165, 178),
     rgb(65, 68, 69)
   );
+}
+
+.animate-up {
+  animation: animateup 5s 1ms infinite;
+}
+
+@keyframes animateup {
+  0% {
+    transform: rotate(0deg);
+    transform: translateY(0);
+  }
+  25% {
+    transform: rotate(20deg);
+    transform: translateY(20px);
+  }
+  50% {
+    transform: rotate(-20deg);
+    transform: translateY(-20px);
+  }
+}
+
+.animate-down {
+  animation: animatedown 5s 1ms infinite;
+}
+
+@keyframes animatedown {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-20deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
 }

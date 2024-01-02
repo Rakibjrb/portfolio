@@ -18,7 +18,7 @@ const Technologies = () => {
     <div className="mb-24 tech-container">
       <SectionHeader title={"Technologies That I Know"} />
       <Marquee>
-        <div className="flex mt-8">
+        <div className="flex mt-8 pb-8">
           {techs?.map((tech) => (
             <Technology key={tech.id} tech={tech} />
           ))}
