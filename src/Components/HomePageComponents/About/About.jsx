@@ -1,5 +1,28 @@
 import { Link } from "react-router-dom";
+import { FiAward, FiBriefcase } from "react-icons/fi";
+import { BiSupport } from "react-icons/bi";
 import image from "../../../assets/images/mypic2.jpg";
+
+const data = [
+  {
+    id: "0001",
+    title: "Experience",
+    title2: "6 Months",
+    icon: <FiAward className="text-2xl" />,
+  },
+  {
+    id: "0002",
+    title: "Completed",
+    title2: "10+ Projects",
+    icon: <FiBriefcase className="text-2xl" />,
+  },
+  {
+    id: "0003",
+    title: "Experience",
+    title2: "6 Months",
+    icon: <BiSupport className="text-2xl" />,
+  },
+];
 
 const About = () => {
   return (
@@ -13,21 +36,32 @@ const About = () => {
           />
         </div>
         <div className="text-white xl:w-2/3">
-          <h2 className="text-5xl font-semibold mb-10">About Me</h2>
+          <h2 className="text-5xl font-semibold mb-10">
+            About <span className="text-[#23c0d2]">Me</span>
+          </h2>
           <p className="text-xl text-justify xl:text-left">
             Hello, I am Rakibul Hasan, a passionate Front End and MERN stack web
             developer with a keen eye for design and a love for crafting
-            seamless user experiences. My journey in the world of web
-            development has been an exciting adventure, marked by continuous
-            learning and a commitment to delivering high-quality solutions.
+            seamless user experiences. With a strong foundation in HTML, CSS,
+            and JavaScript, I specialize in building dynamic and responsive web
+            applications using the MERN (MongoDB, Express.js, React, Node.js)
+            stack.
           </p>
-          <p className="text-xl text-justify xl:text-left mt-5">
-            I am fueled by the intersection of creativity and technology,
-            constantly seeking innovative ways to bring ideas to life through
-            code. With a strong foundation in HTML, CSS, and JavaScript, I
-            specialize in building dynamic and responsive web applications using
-            the MERN (MongoDB, Express.js, React, Node.js) stack.
-          </p>
+          <div className="xl:w-3/5 grid grid-cols-3 gap-2 md:gap-3 my-10">
+            {data?.map((singleData) => (
+              <div
+                key={singleData?.id}
+                className={`border px-2 py-4 flex flex-col items-center rounded-md space-y-1 ${
+                  singleData.id === "0002" && "bg-[#23c1d290]"
+                } hover:bg-[#23c1d290] transition-colors`}
+              >
+                {singleData.icon}
+                <h3>{singleData.title}</h3>
+                <h3>{singleData.title2}</h3>
+              </div>
+            ))}
+          </div>
+
           <div className="flex gap-3 mt-10">
             <button className="btn text-black hover:text-white bg-[#23c0d2] uppercase hover:border hover:border-white">
               Download Resume
