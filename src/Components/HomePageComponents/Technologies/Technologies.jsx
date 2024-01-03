@@ -17,8 +17,8 @@ const Technologies = () => {
   return (
     <div className="mb-24 tech-container">
       <SectionHeader title={"Technologies That I Know"} />
-      <Marquee>
-        <div className="flex mt-8 pb-8">
+      <Marquee pauseOnHover={true}>
+        <div className="flex">
           {techs?.map((tech) => (
             <Technology key={tech.id} tech={tech} />
           ))}

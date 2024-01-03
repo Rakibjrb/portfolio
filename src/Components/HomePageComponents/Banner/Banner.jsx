@@ -54,7 +54,7 @@ const Banner = () => {
               alt="background shape"
             />
             <img
-              className="absolute top-0 right-[70px] w-[160px] lg:w-[200px] lg:right-[85px]"
+              className="absolute top-0 right-[70px] w-[160px] lg:w-[200px] lg:right-[85px] animate-pic"
               src={myimage}
               alt="my image"
             />

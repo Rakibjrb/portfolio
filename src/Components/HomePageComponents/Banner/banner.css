@@ -10,3 +10,22 @@
     transform: rotate(360deg);
   }
 }
+
+.animate-pic {
+  animation: bounce-pic 5s linear infinite;
+}
+
+@keyframes bounce-pic {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(20px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
