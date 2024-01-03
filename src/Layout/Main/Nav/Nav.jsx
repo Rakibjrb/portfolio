@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
@@ -25,14 +25,29 @@ const links = (
 );
 const Nav = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
+  const [sticky, setSticky] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        setSticky(true);
+      } else {
+        setSticky(false);
+      }
+    });
+  }, []);
 
   return (
-    <nav className="text-white py-2 md:py-4">
+    <nav
+      className={`text-white py-2 md:py-4 ${
+        sticky ? "bg-[#000000]" : ""
+      } sticky top-0 z-50`}
+    >
       <div className="max-w-7xl mx-auto px-4 xl:px-0 font-lato">
         <div className="navbar">
           <div className="flex-1">
             <a className="text-xl md:text-2xl font-semibold font-lato">
-              portf<span className="text-[#56cbf9]">olio.</span>
+              Rakib<span className="text-[#56cbf9]">ul.</span>
             </a>
           </div>
           <div className="flex-none">

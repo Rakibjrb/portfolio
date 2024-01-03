@@ -18,8 +18,8 @@ const data = [
   },
   {
     id: "0003",
-    title: "Experience",
-    title2: "6 Months",
+    title: "Support",
+    title2: "online 24/7",
     icon: <BiSupport className="text-2xl" />,
   },
 ];
@@ -51,7 +51,7 @@ const About = () => {
             {data?.map((singleData) => (
               <div
                 key={singleData?.id}
-                className={`border px-2 py-4 flex flex-col items-center rounded-md space-y-1 ${
+                className={`border px-2 py-5 flex flex-col items-center rounded-md space-y-1 ${
                   singleData.id === "0002" && "bg-[#23c1d290]"
                 } hover:bg-[#23c1d290] transition-colors`}
               >
