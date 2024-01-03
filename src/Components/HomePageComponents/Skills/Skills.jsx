@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import SectionHeader from "../../CommonComponets/SectionHeader/SectionHeader";
-import Skill from "../../CommonComponets/SectionHeader/Skill";
+import Skill from "../../CommonComponets/Skill";
 
 const skills = [
   {

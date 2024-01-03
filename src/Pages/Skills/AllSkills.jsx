@@ -1,35 +1,30 @@
-import Skill from "../../Components/CommonComponets/SectionHeader/Skill";
+import Skill from "../../Components/CommonComponets/Skill";
 import Skills from "../../Components/HomePageComponents/Skills/Skills";
 
 const skills = [
   {
-    id: "alskdf1",
-    skill: "react",
+    id: "alskdadff1",
+    skill: "html",
+    parcentage: 90,
+  },
+  {
+    id: "alskdasdff2",
+    skill: "css",
     parcentage: 80,
   },
   {
-    id: "alskdf2",
-    skill: "nodejs",
-    parcentage: 50,
-  },
-  {
-    id: "alskdf3",
-    skill: "express",
-    parcentage: 40,
-  },
-  {
-    id: "alskdf4",
-    skill: "mongodb",
+    id: "alskdfasdff3",
+    skill: "Javacript",
     parcentage: 70,
   },
 ];
 
 const AllSkills = () => {
   return (
-    <div className="mt-24">
+    <div className="my-24">
       <Skills hiddenBtn={true} />
       <div className="max-w-7xl mx-auto px-5 xl:px-0">
-        <div className="-mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="mt-16 md:mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2 flex flex-col gap-4">
             {skills?.map((skill) => (
               <Skill key={skill.id} skill={skill} />
