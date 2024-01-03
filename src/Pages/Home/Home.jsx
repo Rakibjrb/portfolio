@@ -8,10 +8,12 @@ const Home = () => {
   return (
     <div>
       <Banner />
-      <About />
-      <Skills />
-      <Education />
-      <Technologies />
+      <div className="space-y-32 mt-32">
+        <About />
+        <Skills />
+        <Education />
+        <Technologies />
+      </div>
     </div>
   );
 };

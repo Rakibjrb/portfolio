@@ -4,7 +4,7 @@ import bpipic2 from "../../../assets/education/bpi2.jpeg";
 
 const Education = () => {
   return (
-    <div className="max-w-7xl mx-auto my-24 px-3 xl:px-0">
+    <div className="max-w-7xl mx-auto px-3 xl:px-0">
       <SectionHeader title={"Education"} />
       <div className="mt-8 grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-3">
         <div>

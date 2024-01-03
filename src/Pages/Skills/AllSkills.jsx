@@ -17,6 +17,11 @@ const skills = [
     skill: "Javacript",
     parcentage: 70,
   },
+  {
+    id: "alskdfasdff4",
+    skill: "firebase",
+    parcentage: 80,
+  },
 ];
 
 const AllSkills = () => {

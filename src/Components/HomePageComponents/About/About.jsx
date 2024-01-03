@@ -26,7 +26,7 @@ const data = [
 
 const About = () => {
   return (
-    <div className="my-24 max-w-7xl mx-auto px-3 md:px-10 lg:px-3 xl:px-0 font-lato">
+    <div className="max-w-7xl mx-auto px-3 md:px-10 lg:px-3 xl:px-0 font-lato">
       <div className="mt-5  flex flex-col lg:flex-row lg:items-center gap-10">
         <div className="xl:w-1/3">
           <img
