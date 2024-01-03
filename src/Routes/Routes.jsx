@@ -5,6 +5,7 @@ import Dashboard from "../Layout/Admin/Dashboard";
 import PrivateRoutes from "./PrivateRoutes";
 import AdminLogin from "../Pages/AdminLogin/AdminLogin";
 import MyEducation from "../Pages/Education/MyEducation";
+import AllSkills from "../Pages/Skills/AllSkills";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/skills",
+        element: <AllSkills />,
       },
       {
         path: "/education",
