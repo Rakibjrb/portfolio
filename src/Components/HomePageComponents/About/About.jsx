@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import image from "../../../assets/images/mypic2.jpg";
 
 const About = () => {
@@ -27,9 +28,17 @@ const About = () => {
             specialize in building dynamic and responsive web applications using
             the MERN (MongoDB, Express.js, React, Node.js) stack.
           </p>
-          <button className="btn text-black hover:text-white bg-[#23c0d2] uppercase mt-10 hover:border hover:border-white">
-            Download Resume
-          </button>
+          <div className="flex gap-3 mt-10">
+            <button className="btn text-black hover:text-white bg-[#23c0d2] uppercase hover:border hover:border-white">
+              Download Resume
+            </button>
+            <Link
+              to={"/education"}
+              className="btn text-white hover:text-black uppercase border hover:bg-[#23c0d2] border-white"
+            >
+              Education
+            </Link>
+          </div>
         </div>
       </div>
     </div>

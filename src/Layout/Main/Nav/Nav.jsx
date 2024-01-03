@@ -6,19 +6,19 @@ import "./nav.css";
 
 const links = (
   <>
-    <li className="text-[16px]">
+    <li className="hover:text-[#56cbf9] cursor-pointer text-[16px]">
       <NavLink to="/">Home</NavLink>
     </li>
-    <li className="text-[16px]">
+    <li className="hover:text-[#56cbf9] cursor-pointer text-[16px]">
       <NavLink to="/projects">Projects</NavLink>
     </li>
-    <li className="text-[16px]">
+    <li className="hover:text-[#56cbf9] cursor-pointer text-[16px]">
       <NavLink to="/skills">Skills</NavLink>
     </li>
-    <li className="text-[16px]">
+    <li className="hover:text-[#56cbf9] cursor-pointer text-[16px]">
       <NavLink to="/education">Education</NavLink>
     </li>
-    <li className="text-[16px]">
+    <li className="hover:text-[#56cbf9] cursor-pointer text-[16px]">
       <NavLink to="/contact">Contact</NavLink>
     </li>
   </>

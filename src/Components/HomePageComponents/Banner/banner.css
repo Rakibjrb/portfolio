@@ -12,7 +12,7 @@
 }
 
 .animate-pic {
-  animation: bounce-pic 5s linear infinite;
+  animation: bounce-pic 3s linear infinite;
 }
 
 @keyframes bounce-pic {
