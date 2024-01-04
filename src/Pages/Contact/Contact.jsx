@@ -2,11 +2,11 @@ import SectionHeader from "../../Components/CommonComponets/SectionHeader/Sectio
 
 const Contact = () => {
   return (
-    <div className="max-w-7xl mx-auto px-3 xl:px-0 h-[600px] flex justify-center items-center bg-gradient-to-b from-[#000000] to-[#75e6f0] rounded-b-full">
+    <div className="max-w-7xl mx-auto px-3 xl:px-0 h-[800px] md:h-[600px] flex justify-center items-center bg-gradient-to-b from-[#75e6f033] md:from-black to-[#75e6f0] md:to-[#75e6f0] rounded-b-full">
       <div className="font-lato">
         <SectionHeader title={"Get In Touch"} />
         <form>
-          <div className="flex gap-6">
+          <div className="flex flex-col md:flex-row gap-6">
             <div className="space-y-6 flex-1">
               <input
                 className="bg-white text-xl py-2 px-4 rounded-md w-full placeholder:text-black text-black outline-none"
