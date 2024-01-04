@@ -6,6 +6,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import AdminLogin from "../Pages/AdminLogin/AdminLogin";
 import MyEducation from "../Pages/Education/MyEducation";
 import AllSkills from "../Pages/Skills/AllSkills";
+import Contact from "../Pages/Contact/Contact";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/education",
         element: <MyEducation />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
     ],
   },
