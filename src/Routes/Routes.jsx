@@ -7,6 +7,7 @@ import AdminLogin from "../Pages/AdminLogin/AdminLogin";
 import MyEducation from "../Pages/Education/MyEducation";
 import AllSkills from "../Pages/Skills/AllSkills";
 import Contact from "../Pages/Contact/Contact";
+import Projects from "../Pages/Projects/Projects";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/projects",
+        element: <Projects />,
       },
       {
         path: "/skills",

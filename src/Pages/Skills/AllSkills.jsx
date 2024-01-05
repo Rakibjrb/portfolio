@@ -26,7 +26,7 @@ const skills = [
 
 const AllSkills = () => {
   return (
-    <div className="my-24">
+    <div className="my-8 lg:my-12">
       <Skills hiddenBtn={true} />
       <div className="max-w-7xl mx-auto px-5 xl:px-0">
         <div className="mt-16 md:mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
