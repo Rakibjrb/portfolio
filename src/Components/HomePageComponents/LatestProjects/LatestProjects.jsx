@@ -17,7 +17,14 @@ const LatestProjects = () => {
       <SectionHeader title={"Latest Projects"} />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-4 pt-5 md:pt-0">
         {projects?.map((project) => (
-          <Project key={project.id} project={project} />
+          <div
+            key={project.id}
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-center"
+            data-aos-duration="500"
+          >
+            <Project project={project} />
+          </div>
         ))}
       </div>
     </div>

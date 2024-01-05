@@ -51,20 +51,45 @@ const professional = [
 
 const Skills = ({ hiddenBtn }) => {
   return (
-    <div className="max-w-7xl mx-auto font-lato px-5 xl:px-0">
+    <div className="max-w-7xl mx-auto font-lato px-5 xl:px-0 overflow-x-hidden">
       <SectionHeader title={"My Skills"} />
       <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 flex flex-col gap-4">
-          <h2 className="text-center text-3xl">Technical</h2>
+          <h2
+            className="text-center text-3xl"
+            data-aos="flip-left"
+            data-aos-duration="800"
+          >
+            Technical
+          </h2>
           {skills?.map((skill) => (
-            <Skill key={skill.id} skill={skill} />
+            <div
+              key={skill.id}
+              data-aos="fade-right"
+              data-aos-offset="300"
+              data-aos-easing="ease-in-sine"
+            >
+              <Skill skill={skill} />
+            </div>
           ))}
         </div>
         <div className="flex-1 mt-8 md:mt-0">
-          <h2 className="text-center text-3xl  mb-10">Professional</h2>
+          <h2
+            className="text-center text-3xl  mb-10"
+            data-aos="flip-right"
+            data-aos-duration="800"
+          >
+            Professional
+          </h2>
           <div className="grid grid-cols-2 gap-5">
             {professional?.map((skill) => (
-              <div key={skill.id} className="text-center">
+              <div
+                key={skill.id}
+                className="text-center"
+                data-aos="fade-left"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine"
+              >
                 <div
                   className="radial-progress text-[#00B6FF]"
                   style={{ "--value": skill?.parcentage }}
@@ -78,7 +103,11 @@ const Skills = ({ hiddenBtn }) => {
           </div>
         </div>
       </div>
-      <div className={`${hiddenBtn ? "hidden" : ""} flex justify-center mt-16`}>
+      <div
+        className={`${hiddenBtn ? "hidden" : ""} flex justify-center mt-16`}
+        data-aos="zoom-in-down"
+        data-aos-duration="800"
+      >
         <Link
           to={"/skills"}
           className="btn text-black hover:text-white bg-[#00B6FF] uppercase hover:border hover:border-white"

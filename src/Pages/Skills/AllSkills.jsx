@@ -26,11 +26,16 @@ const skills = [
 
 const AllSkills = () => {
   return (
-    <div className="my-8 lg:my-12">
+    <div className="my-8 lg:my-12 mt-16 pb-64">
       <Skills hiddenBtn={true} />
       <div className="max-w-7xl mx-auto px-5 xl:px-0">
         <div className="mt-16 md:mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2 flex flex-col gap-4">
+          <div
+            className="lg:col-span-2 flex flex-col gap-4"
+            data-aos="fade-right"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine"
+          >
             {skills?.map((skill) => (
               <Skill key={skill.id} skill={skill} />
             ))}

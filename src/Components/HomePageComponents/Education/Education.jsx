@@ -7,11 +7,20 @@ const Education = () => {
     <div className="max-w-7xl mx-auto px-3 xl:px-0">
       <SectionHeader title={"Education"} />
       <div className="mt-8 grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-3">
-        <div>
-          <img className="rounded-lg" src={bpipic1} alt="pic1" />
-        </div>
+        <img
+          className="rounded-lg"
+          src={bpipic1}
+          alt="pic1"
+          data-aos="fade-down"
+          data-aos-easing="linear"
+          data-aos-duration="1500"
+        />
         <div className="md:col-span-2 flex items-center justify-center">
-          <div className="text-white space-y-5">
+          <div
+            className="text-white space-y-5"
+            data-aos="flip-right"
+            data-aos-duration="1000"
+          >
             <h2 className="text-xl lg:text-3xl text-center">
               Bogura Polytechnic Institute
             </h2>
@@ -24,9 +33,14 @@ const Education = () => {
             </h3>
           </div>
         </div>
-        <div>
-          <img className="rounded-lg" src={bpipic2} alt="pic1" />
-        </div>
+        <img
+          className="rounded-lg"
+          src={bpipic2}
+          alt="pic1"
+          data-aos="fade-up"
+          data-aos-easing="linear"
+          data-aos-duration="1500"
+        />
       </div>
     </div>
   );

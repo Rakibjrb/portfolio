@@ -4,6 +4,7 @@ import Education from "../../Components/HomePageComponents/Education/Education";
 import LatestProjects from "../../Components/HomePageComponents/LatestProjects/LatestProjects";
 import Skills from "../../Components/HomePageComponents/Skills/Skills";
 import Technologies from "../../Components/HomePageComponents/Technologies/Technologies";
+import Footer from "../../Layout/Main/Footer/Footer";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
         <Education />
         <Technologies />
       </div>
+      <Footer />
     </div>
   );
 };

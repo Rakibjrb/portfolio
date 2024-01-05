@@ -25,7 +25,12 @@ const Contact = () => {
 
   return (
     <>
-      <div className="max-w-7xl mx-auto px-3 xl:px-0 h-[800px] md:h-[600px] flex justify-center items-center bg-gradient-to-b from-[#75e6f033] md:from-black to-[#75e6f0] md:to-[#75e6f0] rounded-b-full">
+      <div
+        className="max-w-7xl mx-auto px-3 xl:px-0 h-[800px] md:h-[600px] flex justify-center items-center bg-gradient-to-b from-[#75e6f033] md:from-black to-[#75e6f0] md:to-[#75e6f0] rounded-b-full"
+        data-aos="fade-down"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine"
+      >
         <div className="font-lato">
           <SectionHeader title={"Get In Touch"} />
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -101,7 +106,7 @@ const Contact = () => {
           </div>
           <h3 className="font-bold text-center text-3xl">Submit Success!!!</h3>
           <p className="pt-4 text-xl text-center">
-            Thanks for submit your contact information ...
+            Thanks for submit your information ...
           </p>
           <div className="modal-action">
             <form method="dialog">
