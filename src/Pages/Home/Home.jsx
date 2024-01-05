@@ -11,8 +11,8 @@ const Home = () => {
       <Banner />
       <div className="space-y-32 mt-32">
         <About />
-        <Skills />
         <LatestProjects />
+        <Skills />
         <Education />
         <Technologies />
       </div>

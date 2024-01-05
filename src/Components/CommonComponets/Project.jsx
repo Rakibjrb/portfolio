@@ -12,7 +12,10 @@ const Project = ({ project }) => {
         alt={project?.project_name}
       />
       <div className="text-white mt-4">
-        <Link className="hover:underline">
+        <Link
+          className="hover:underline"
+          to={`/projects/details/${project?.id}`}
+        >
           <h3 className="text-4xl">{project?.project_name}</h3>
         </Link>
         <div className="flex justify-center gap-4 mt-5">
