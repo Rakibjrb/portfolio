@@ -2,11 +2,16 @@ import { useForm } from "react-hook-form";
 import moment from "moment";
 import SectionHeader from "../../Components/CommonComponets/SectionHeader/SectionHeader";
 import woman from "../../assets/icons/woman.svg";
+import useAxiosPublic from "../../hooks/axios/useAxiosPublic";
+import Swal from "sweetalert2";
 
 const Contact = () => {
+  const axios = useAxiosPublic();
+
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -19,8 +24,20 @@ const Contact = () => {
       date: moment().format("D MMMM YYYY"),
       time: moment().format("h:mm a"),
     };
-    console.log(formData);
-    document.getElementById("open_modal").showModal();
+
+    axios
+      .post("/contacts", formData)
+      .then((res) => {
+        res.data && document.getElementById("open_modal").showModal();
+        reset();
+      })
+      .catch(() => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong !!!",
+        });
+      });
   };
 
   return (
