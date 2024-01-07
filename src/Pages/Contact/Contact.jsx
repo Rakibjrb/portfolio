@@ -1,11 +1,14 @@
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
+import { useState } from "react";
 import moment from "moment";
+import { ImSpinner9 } from "react-icons/im";
 import SectionHeader from "../../Components/CommonComponets/SectionHeader/SectionHeader";
 import woman from "../../assets/icons/woman.svg";
 import useAxiosPublic from "../../hooks/axios/useAxiosPublic";
-import Swal from "sweetalert2";
 
 const Contact = () => {
+  const [loading, setLoading] = useState(false);
   const axios = useAxiosPublic();
 
   const {
@@ -25,13 +28,17 @@ const Contact = () => {
       time: moment().format("h:mm a"),
     };
 
+    setLoading(true);
+
     axios
       .post("/contacts", formData)
       .then((res) => {
         res.data && document.getElementById("open_modal").showModal();
+        setLoading(false);
         reset();
       })
       .catch(() => {
+        setLoading(false);
         Swal.fire({
           icon: "error",
           title: "Oops...",
@@ -86,7 +93,7 @@ const Contact = () => {
                   {...register("subject", {
                     required: true,
                     minLength: 5,
-                    maxLength: 30,
+                    maxLength: 50,
                   })}
                 />
               </div>
@@ -105,9 +112,13 @@ const Contact = () => {
             <div className="mt-8 flex justify-center">
               <button
                 type="submit"
-                className="btn uppercase hover:bg-[#4cbec6] text-white hover:border hover:border-white hover:text-white"
+                className="text-center btn uppercase hover:bg-[#4cbec6] text-white hover:border hover:border-white hover:text-white"
               >
-                Submit Now
+                {loading ? (
+                  <ImSpinner9 className="text-xl animate-spin" />
+                ) : (
+                  "Submit Now"
+                )}
               </button>
             </div>
           </form>
