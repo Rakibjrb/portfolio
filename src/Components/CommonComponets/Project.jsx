@@ -14,7 +14,7 @@ const Project = ({ project }) => {
       <div className="text-white mt-4">
         <Link
           className="hover:underline"
-          to={`/projects/details/${project?.id}`}
+          to={`/projects/details/${project?._id}`}
         >
           <h3 className="text-4xl">{project?.project_name}</h3>
         </Link>
