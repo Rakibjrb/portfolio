@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import SectionHeader from "../../CommonComponets/SectionHeader/SectionHeader";
 import Project from "../../CommonComponets/Project";
 import useAxiosPublic from "../../../hooks/axios/useAxiosPublic";
+import Loading from "../../CommonComponets/Loading";
 
 const LatestProjects = () => {
   const axios = useAxiosPublic();
@@ -18,9 +19,7 @@ const LatestProjects = () => {
     <div className="max-w-7xl mx-auto px-3 xl:px-0">
       <SectionHeader title={"Latest Projects"} />
       {isLoading ? (
-        <div className="flex justify-center">
-          <progress className="progress w-56"></progress>
-        </div>
+        <Loading />
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-4 pt-5 md:pt-0">
           {projects?.map((project) => (
