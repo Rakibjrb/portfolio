@@ -1,3 +1,10 @@
 .sidebar {
   background: linear-gradient(135deg, #04e6ff, #000, #12afc0);
 }
+.link-child {
+  color: #fff;
+}
+
+.link-parent:hover .link-child {
+  color: #000;
+}
