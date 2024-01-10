@@ -9,6 +9,8 @@ import AllSkills from "../Pages/Skills/AllSkills";
 import Contact from "../Pages/Contact/Contact";
 import Projects from "../Pages/Projects/Projects";
 import ProjectDetails from "../Pages/ProjectDetails/ProjectDetails";
+import Overview from "../Pages/AdminLogin/AdminPages/Overview/Overview";
+import AddProject from "../Pages/AdminLogin/AdminPages/AddProject/AddProject";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +54,25 @@ const router = createBrowserRouter([
         <Dashboard />
       </PrivateRoutes>
     ),
+    children: [
+      {
+        index: true,
+        path: "",
+        element: (
+          <PrivateRoutes>
+            <Overview />
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "add-project",
+        element: (
+          <PrivateRoutes>
+            <AddProject />
+          </PrivateRoutes>
+        ),
+      },
+    ],
   },
 ]);
 

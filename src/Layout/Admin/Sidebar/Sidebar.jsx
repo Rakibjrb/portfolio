@@ -16,25 +16,36 @@ const Sidebar = () => {
   const [showBar, setShowBar] = useState(false);
 
   const adminLogout = () => {
-    logOut()
-      .then(() => {
-        Swal.fire("Logout success");
-        navigate("/");
-      })
-      .catch(() => {
-        Swal.fire("Something went wrong !!!");
-      });
+    Swal.fire({
+      title: "Are you sure?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, Logout",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        logOut()
+          .then(() => {
+            Swal.fire("Logout success");
+            navigate("/");
+          })
+          .catch(() => {
+            Swal.fire("Something went wrong !!!");
+          });
+      }
+    });
   };
 
   const pages = [
     {
       name: "Overview",
-      link: "/dashboard/overview",
+      link: "/dashboard",
       icon: <BsBarChartFill className="link-child uppercase text-3xl " />,
     },
     {
       name: "Add Project",
-      link: "/dashboard/add-projects",
+      link: "/dashboard/add-project",
       icon: <LuLayoutDashboard className="link-child uppercase text-3xl" />,
     },
     {
@@ -98,7 +109,7 @@ const Sidebar = () => {
       <div
         className={`sidebar xl:hidden text-white font-lato fixed top-0 ${
           showBar ? "left-0" : "-left-[9999px]"
-        } w-[85%] min-h-screen transition-all duration-300`}
+        } w-[85%] md:w-80 min-h-screen transition-all duration-300`}
       >
         <div className="flex gap-2 justify-center items-center h-32 relative border-b-4">
           <button
