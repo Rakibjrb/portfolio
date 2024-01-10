@@ -1,7 +1,9 @@
+import Sidebar from "./Sidebar/Sidebar";
+
 const Dashboard = () => {
   return (
-    <div>
-      <h1 className="text-3xl">Admin Dashboard</h1>
+    <div className="max-w-screen-2xl mx-auto overflow-x-hidden">
+      <Sidebar />
     </div>
   );
 };
