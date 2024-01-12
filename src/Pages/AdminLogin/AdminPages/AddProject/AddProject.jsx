@@ -22,7 +22,7 @@ const AddProject = () => {
     }
 
     const features = formData.features.split(",");
-    const techstacks = formData.techstacks.split(",");
+    const techstacks = formData.technologies.split(",");
 
     const imgBody = new FormData();
     imgBody.set("key", import.meta.env.VITE_imgbb_api);
