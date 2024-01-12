@@ -1,9 +1,10 @@
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import SectionHeader from "../../Components/CommonComponets/SectionHeader/SectionHeader";
 import LatestProjects from "../../Components/HomePageComponents/LatestProjects/LatestProjects";
+import TabPanelProjects from "./TabPanelProjects/TabPanelProjects";
+
 import "react-tabs/style/react-tabs.css";
 import "./projects.css";
-import TabPanelProjects from "./All/TabPanelProjects";
 
 const tabs = ["All", "MERN", "Front End", "Basic"];
 
