@@ -1,13 +1,70 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
+import axios from "axios";
+import { ImSpinner9 } from "react-icons/im";
 import Modal from "../../../../Components/CommonComponets/Modal";
+import useAxiosPublic from "../../../../hooks/axios/useAxiosPublic";
 import "./addproject.css";
 
 const AddProject = () => {
+  const [loading, setLoading] = useState(false);
   const { register, handleSubmit, reset } = useForm();
+  const axiosPublic = useAxiosPublic();
 
-  const onSubmit = (formData) => {
-    console.log(formData);
-    document.getElementById("open_modal").showModal();
+  const onSubmit = async (formData) => {
+    const image = formData.image[0];
+    const imagesize = image.size / (1024 * 1024);
+
+    if (imagesize > 2) {
+      Swal.fire("Select image under 2MB");
+      return;
+    }
+
+    const features = formData.features.split(",");
+    const techstacks = formData.features.split(",");
+
+    const imgBody = new FormData();
+    imgBody.set("key", import.meta.env.VITE_imgbb_api);
+    imgBody.append("image", image);
+
+    setLoading(true);
+
+    const hostImg = async () => {
+      const res = await axios({
+        method: "post",
+        url: "https://api.imgbb.com/1/upload",
+        data: imgBody,
+      });
+      return res.data.data.url;
+    };
+
+    const imagelink = await hostImg();
+
+    const project = {
+      image: imagelink,
+      project_name: formData.name,
+      details: formData.details,
+      features,
+      recected: 1,
+      techstacks,
+      type: "old",
+      category: formData.category,
+      live_link: formData.live_link,
+      client_code: formData.client_code,
+      server_code: formData.server_code || "none",
+    };
+
+    axiosPublic
+      .post("/projects", project)
+      .then(() => {
+        document.getElementById("open_modal").showModal();
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setLoading(false);
+      });
   };
 
   return (
@@ -70,11 +127,42 @@ const AddProject = () => {
                 minLength: 5,
               })}
             ></textarea>
+            <input
+              type="text"
+              placeholder="Project Live Site Link"
+              className="input input-bordered input-info w-full text-xl col-span-2"
+              {...register("live_link", {
+                required: true,
+                minLength: 5,
+              })}
+            />
+            <input
+              type="text"
+              placeholder="Client Side Code Link"
+              className="input input-bordered input-info w-full text-xl"
+              {...register("client_code", {
+                required: true,
+                minLength: 5,
+              })}
+            />
+            <input
+              type="text"
+              placeholder="Server Side Code Link"
+              className="input input-bordered input-info w-full text-xl"
+              {...register("server_code", {
+                required: true,
+                minLength: 5,
+              })}
+            />
             <button
               type="submit"
-              className="col-span-3 w-full p-3 text-xl bg-[#55daff] hover:bg-slate-300 rounded-md text-black uppercase text-center transition-colors"
+              className="col-span-3 text-center btn uppercase bg-[#69f5ff] text-black hover:border hover:border-white hover:text-white"
             >
-              Add Now
+              {loading ? (
+                <ImSpinner9 className="text-xl animate-spin" />
+              ) : (
+                "Add Now"
+              )}
             </button>
             <div
               onClick={() => reset()}
