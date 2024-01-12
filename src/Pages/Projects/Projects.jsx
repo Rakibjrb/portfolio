@@ -3,8 +3,9 @@ import SectionHeader from "../../Components/CommonComponets/SectionHeader/Sectio
 import LatestProjects from "../../Components/HomePageComponents/LatestProjects/LatestProjects";
 import "react-tabs/style/react-tabs.css";
 import "./projects.css";
+import TabPanelProjects from "./All/TabPanelProjects";
 
-const tabs = ["All", "Front End", "MERN", "Basic"];
+const tabs = ["All", "MERN", "Front End", "Basic"];
 
 const Projects = () => {
   return (
@@ -19,7 +20,9 @@ const Projects = () => {
             ))}
           </TabList>
           {tabs.map((tab, index) => (
-            <TabPanel key={`tabpanel${index}`}>{tab}</TabPanel>
+            <TabPanel key={`tabpanel${index}`}>
+              <TabPanelProjects tab={tab} />
+            </TabPanel>
           ))}
         </Tabs>
       </div>
