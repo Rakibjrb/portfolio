@@ -4,8 +4,8 @@ import { useState } from "react";
 import moment from "moment";
 import { ImSpinner9 } from "react-icons/im";
 import SectionHeader from "../../Components/CommonComponets/SectionHeader/SectionHeader";
-import woman from "../../assets/icons/woman.svg";
 import useAxiosPublic from "../../hooks/axios/useAxiosPublic";
+import Modal from "../../Components/CommonComponets/Modal";
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
@@ -124,25 +124,7 @@ const Contact = () => {
           </form>
         </div>
       </div>
-      <dialog
-        id="open_modal"
-        className="modal modal-bottom sm:modal-middle text-black font-lato"
-      >
-        <div className="modal-box bg-white">
-          <div className="flex justify-center">
-            <img className="w-[200px] mt-3 mb-5" src={woman} alt="woman pic" />
-          </div>
-          <h3 className="font-bold text-center text-3xl">Submit Success!!!</h3>
-          <p className="pt-4 text-xl text-center">
-            Thanks for submit your information ...
-          </p>
-          <div className="modal-action">
-            <form method="dialog">
-              <button className="btn text-white">Close</button>
-            </form>
-          </div>
-        </div>
-      </dialog>
+      <Modal statusMessage={"Submit Success"} message={true} />
     </>
   );
 };
