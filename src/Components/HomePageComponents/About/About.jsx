@@ -2,29 +2,40 @@ import { Link } from "react-router-dom";
 import { FiAward, FiBriefcase } from "react-icons/fi";
 import { BiSupport } from "react-icons/bi";
 import image from "../../../assets/images/mypic2.jpg";
-
-const data = [
-  {
-    id: "0001",
-    title: "Experience",
-    title2: "6 Months",
-    icon: <FiAward className="text-2xl" />,
-  },
-  {
-    id: "0002",
-    title: "Completed",
-    title2: "10+ Projects",
-    icon: <FiBriefcase className="text-2xl" />,
-  },
-  {
-    id: "0003",
-    title: "Support",
-    title2: "online 24/7",
-    icon: <BiSupport className="text-2xl" />,
-  },
-];
+import useAxiosPublic from "../../../hooks/axios/useAxiosPublic";
+import { useQuery } from "@tanstack/react-query";
 
 const About = () => {
+  const axios = useAxiosPublic();
+  const { data: count } = useQuery({
+    queryKey: ["alldocumentcount"],
+    queryFn: async () => {
+      const res = await axios.get("/projects-count");
+      return res.data?.total;
+    },
+  });
+  const projects = count || 10;
+  const data = [
+    {
+      id: "0001",
+      title: "Experience",
+      title2: "Fresher",
+      icon: <FiAward className="text-2xl" />,
+    },
+    {
+      id: "0002",
+      title: "Completed",
+      title2: `${projects}+ Projects`,
+      icon: <FiBriefcase className="text-2xl" />,
+    },
+    {
+      id: "0003",
+      title: "Support",
+      title2: "online 24/7",
+      icon: <BiSupport className="text-2xl" />,
+    },
+  ];
+
   return (
     <div className="max-w-7xl mx-auto px-3 md:px-10 lg:px-3 xl:px-0 font-lato overflow-x-hidden">
       <div className="mt-5 flex flex-col lg:flex-row lg:items-center gap-10">
