@@ -6,6 +6,7 @@ import {
 } from "firebase/auth";
 import PropTypes from "prop-types";
 import auth from "./auth";
+import useAxiosPublic from "../hooks/axios/useAxiosPublic";
 
 //created authentication context
 export const AuthContext = createContext(null);
@@ -14,6 +15,7 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
   const [admin, setAdmin] = useState(null);
   const [loading, setLoading] = useState(true);
+  const axios = useAxiosPublic();
 
   const adminLogin = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
@@ -34,6 +36,19 @@ const AuthProvider = ({ children }) => {
     const unSubscribe = onAuthStateChanged(auth, (admin) => {
       setAdmin(admin);
       setLoading(false);
+      if (admin) {
+        axios
+          .post("/createToken", {
+            username: import.meta.env.VITE_Admin_Username,
+            email: admin.email,
+          })
+          .then((res) => {
+            console.log(res.data);
+          })
+          .catch((err) => {
+            console.log(err.message);
+          });
+      }
     });
     return () => unSubscribe();
   }, []);

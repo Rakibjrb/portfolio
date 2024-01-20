@@ -61,7 +61,7 @@ const AdminLogin = () => {
           />
           <button
             type="submit"
-            className="input input-bordered input-info w-full hover:bg-[#4b4b4b] uppercase transition-colors"
+            className="input input-bordered input-info w-full hover:bg-[#07A2E7] uppercase transition-colors"
           >
             {loading ? (
               <div className="flex justify-center items-center">
