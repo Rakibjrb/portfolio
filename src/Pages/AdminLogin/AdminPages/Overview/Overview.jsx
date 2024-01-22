@@ -1,4 +1,5 @@
 import moment from "moment";
+import Topbar from "./Topbar";
 
 const Overview = () => {
   return (
@@ -7,6 +8,7 @@ const Overview = () => {
         <h1 className="text-3xl">Admin Panel</h1>
         <h2 className="text-3xl">{moment().format("DD/MM/YYYY")}</h2>
       </div>
+      <Topbar />
     </div>
   );
 };
