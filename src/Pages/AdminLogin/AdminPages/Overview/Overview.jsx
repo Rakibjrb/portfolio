@@ -1,6 +1,13 @@
+import moment from "moment";
+
 const Overview = () => {
   return (
-    <div className="bg-white text-black text-4xl p-5">Hi, Rakibul Hasan</div>
+    <div className="p-4">
+      <div className="text-white flex justify-between">
+        <h1 className="text-3xl">Admin Panel</h1>
+        <h2 className="text-3xl">{moment().format("DD/MM/YYYY")}</h2>
+      </div>
+    </div>
   );
 };
 
