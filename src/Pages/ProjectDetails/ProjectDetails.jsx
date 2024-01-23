@@ -1,21 +1,58 @@
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { IoHeartSharp } from "react-icons/io5";
 import { IoMdShare } from "react-icons/io";
 import { TiInputChecked } from "react-icons/ti";
+import { useState } from "react";
+import Swal from "sweetalert2";
 import useAxiosPublic from "../../hooks/axios/useAxiosPublic";
 import Loading from "../../Components/CommonComponets/Loading";
 
 const ProjectDetails = () => {
-  const projectId = useParams().id;
+  const [like, setLike] = useState(0);
+  const params = useParams();
+  const location = useLocation();
   const axios = useAxiosPublic();
   const { data: project, isLoading } = useQuery({
-    queryKey: ["getsingleproject", projectId],
+    queryKey: ["getsingleproject", params.id],
     queryFn: async () => {
-      const res = await axios.get(`/projects/${projectId}`);
+      const res = await axios.get(`/projects/${params.id}`);
+      setLike(res.data.recected || 1);
       return res.data;
     },
   });
+
+  const alert = (message) => {
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: message,
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
+
+  const handleLike = () => {
+    axios
+      .put(`/projects/add-like/${params.id}`, { like })
+      .then((res) => {
+        setLike(like + 1);
+        alert("Thanks for Resected");
+      })
+      .catch((err) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oooops",
+          text: "Something went wrong!",
+        });
+      });
+  };
+
+  const handleShare = () => {
+    const link = `https://rakibul-dev.web.app${location.pathname}`;
+    navigator.clipboard.writeText(link);
+    alert("Link copied for share");
+  };
 
   return (
     <div className="max-w-3xl mx-auto px-3 my-16 xl:px-0 font-lato">
@@ -62,12 +99,18 @@ const ProjectDetails = () => {
           </div>
           <div className="flex justify-between p-3">
             <div className="flex items-center">
-              <button className="cursor-pointer p-2 hover:shadow-black hover:shadow-xl flex justify-center items-center rounded-full">
+              <button
+                onClick={handleLike}
+                className="cursor-pointer p-2 hover:shadow-black hover:shadow-xl flex justify-center items-center rounded-full"
+              >
                 <IoHeartSharp className={`text-3xl text-black`} />
               </button>
-              <h2 className="text-3xl">{project?.recected}</h2>
+              <h2 className="text-3xl">{like}</h2>
             </div>
-            <button className="cursor-pointer p-2 hover:shadow-black hover:shadow-xl flex justify-center items-center rounded-full">
+            <button
+              onClick={handleShare}
+              className="cursor-pointer p-2 hover:shadow-black hover:shadow-xl flex justify-center items-center rounded-full"
+            >
               <IoMdShare className="text-3xl text-black" />
             </button>
           </div>
