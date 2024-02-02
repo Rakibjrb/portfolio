@@ -26,6 +26,7 @@ const Contact = () => {
       message: data.message,
       date: moment().format("D MMMM YYYY"),
       time: moment().format("h:mm a"),
+      status: "toview",
     };
 
     setLoading(true);
