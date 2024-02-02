@@ -11,6 +11,7 @@ import Projects from "../Pages/Projects/Projects";
 import ProjectDetails from "../Pages/ProjectDetails/ProjectDetails";
 import Overview from "../Pages/AdminLogin/AdminPages/Overview/Overview";
 import AddProject from "../Pages/AdminLogin/AdminPages/AddProject/AddProject";
+import Contacts from "../Pages/AdminLogin/AdminPages/Contacts/Contacts";
 
 const router = createBrowserRouter([
   {
@@ -69,6 +70,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoutes>
             <AddProject />
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "contacts",
+        element: (
+          <PrivateRoutes>
+            <Contacts />
           </PrivateRoutes>
         ),
       },

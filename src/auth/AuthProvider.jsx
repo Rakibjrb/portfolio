@@ -43,7 +43,9 @@ const AuthProvider = ({ children }) => {
             email: admin.email,
           })
           .then((res) => {
-            console.log(res.data);
+            if (res.data.token) {
+              localStorage.setItem("token", res.data.token);
+            }
           })
           .catch((err) => {
             console.log(err.message);

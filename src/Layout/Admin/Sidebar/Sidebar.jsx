@@ -8,6 +8,7 @@ import { LuLayoutDashboard } from "react-icons/lu";
 import { BsBarChartFill } from "react-icons/bs";
 import { FaHome } from "react-icons/fa";
 import { BiLogOut } from "react-icons/bi";
+import { MdOutlineContactMail } from "react-icons/md";
 import "./sidebar.css";
 
 const Sidebar = () => {
@@ -47,6 +48,11 @@ const Sidebar = () => {
       name: "Add Project",
       link: "/dashboard/add-project",
       icon: <LuLayoutDashboard className="link-child uppercase text-3xl" />,
+    },
+    {
+      name: "Contacts",
+      link: "/dashboard/contacts",
+      icon: <MdOutlineContactMail className="link-child uppercase text-3xl" />,
     },
     {
       name: "Go Home",
@@ -109,7 +115,7 @@ const Sidebar = () => {
       <div
         className={`sidebar xl:hidden text-white font-lato fixed top-0 ${
           showBar ? "left-0" : "-left-[9999px]"
-        } w-[85%] md:w-80 min-h-screen transition-all duration-300`}
+        } w-[85%] md:w-80 min-h-screen transition-all duration-300 z-50`}
       >
         <div className="flex gap-2 justify-center items-center h-32 relative border-b-4">
           <button
