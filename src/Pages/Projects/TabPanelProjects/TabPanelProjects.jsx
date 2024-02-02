@@ -13,6 +13,8 @@ const TabPanelProjects = ({ tab }) => {
     tabName = "frontend";
   } else if (tab === "Basic") {
     tabName = "basic";
+  } else if (tab === "Pending") {
+    tabName = "pending";
   }
 
   const { projects, isLoading } = useProjects(tabName);
