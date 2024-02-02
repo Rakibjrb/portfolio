@@ -6,7 +6,7 @@ import TabPanelProjects from "./TabPanelProjects/TabPanelProjects";
 import "react-tabs/style/react-tabs.css";
 import "./projects.css";
 
-const tabs = ["All", "MERN", "Front End", "Basic"];
+const tabs = ["All", "MERN", "Front End", "Basic", "Pending"];
 
 const Projects = () => {
   return (

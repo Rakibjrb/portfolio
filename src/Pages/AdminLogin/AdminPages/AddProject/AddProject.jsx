@@ -92,6 +92,7 @@ const AddProject = () => {
               })}
             >
               <option value="frontend">Select Category</option>
+              <option value="Pending">Pending</option>
               <option value="frontend">Frond End</option>
               <option value="mern">MERN stack</option>
               <option value="basic">Basic</option>
@@ -133,7 +134,7 @@ const AddProject = () => {
               className="input input-bordered input-info w-full text-xl col-span-2"
               {...register("live_link", {
                 required: true,
-                minLength: 5,
+                minLength: 4,
               })}
             />
             <input
@@ -142,7 +143,7 @@ const AddProject = () => {
               className="input input-bordered input-info w-full text-xl"
               {...register("client_code", {
                 required: true,
-                minLength: 5,
+                minLength: 4,
               })}
             />
             <input
@@ -151,7 +152,7 @@ const AddProject = () => {
               className="input input-bordered input-info w-full text-xl"
               {...register("server_code", {
                 required: true,
-                minLength: 5,
+                minLength: 4,
               })}
             />
             <button

@@ -1,6 +1,7 @@
 import { useLocation, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { IoHeartSharp } from "react-icons/io5";
+import { FaHeart } from "react-icons/fa";
+import { FaRegHeart } from "react-icons/fa";
 import { IoMdShare } from "react-icons/io";
 import { TiInputChecked } from "react-icons/ti";
 import { useState } from "react";
@@ -10,6 +11,7 @@ import Loading from "../../Components/CommonComponets/Loading";
 
 const ProjectDetails = () => {
   const [like, setLike] = useState(0);
+  const [liked, setLiked] = useState(false);
   const params = useParams();
   const location = useLocation();
   const axios = useAxiosPublic();
@@ -33,11 +35,16 @@ const ProjectDetails = () => {
   };
 
   const handleLike = () => {
+    if (liked) {
+      alert("Already Resected");
+      return;
+    }
     axios
       .put(`/projects/add-like/${params.id}`, { like })
       .then((res) => {
         setLike(like + 1);
         alert("Thanks for Resected");
+        setLiked(true);
       })
       .catch((err) => {
         Swal.fire({
@@ -103,7 +110,11 @@ const ProjectDetails = () => {
                 onClick={handleLike}
                 className="cursor-pointer p-2 hover:shadow-black hover:shadow-xl flex justify-center items-center rounded-full"
               >
-                <IoHeartSharp className={`text-3xl text-black`} />
+                {liked ? (
+                  <FaHeart className={`text-3xl text-black`} />
+                ) : (
+                  <FaRegHeart className={`text-3xl text-black`} />
+                )}
               </button>
               <h2 className="text-3xl">{like}</h2>
             </div>

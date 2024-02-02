@@ -42,8 +42,8 @@ const Topbar = () => {
             <div className="flex justify-center">
               <AiOutlineFileDone className="text-5xl" />
             </div>
-            <h3 className="text-xl my-5">Task Completed</h3>
-            <h4 className="text-2xl font-bold">2</h4>
+            <h3 className="text-xl my-5">Pending Projects</h3>
+            <h4 className="text-2xl font-bold">1</h4>
           </div>
         </div>
       </div>
