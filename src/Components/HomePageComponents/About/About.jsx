@@ -94,9 +94,13 @@ const About = () => {
             data-aos-duration="1000"
             className="flex gap-3 mt-10"
           >
-            <button className="btn text-black hover:text-white bg-[#23c0d2] uppercase hover:border hover:border-white">
+            <a
+              href="https://drive.google.com/file/d/1Qar9GnBcD6t23yml8KucbFCtPksb_tjK/view?usp=sharing"
+              target="blank"
+              className="btn text-black hover:text-white bg-[#23c0d2] uppercase hover:border hover:border-white"
+            >
               Download Resume
-            </button>
+            </a>
             <Link
               to={"/education"}
               className="btn text-white hover:text-black uppercase border hover:bg-[#23c0d2] border-white"

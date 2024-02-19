@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { FaLinkedinIn, FaFacebookF } from "react-icons/fa";
-import { MdOutlineEmail } from "react-icons/md";
+import { Link } from "react-router-dom";
+import { FaLinkedinIn, FaFacebookF, FaGithub } from "react-icons/fa";
 import Typewriter from "typewriter-effect/dist/core";
 import bgshape from "../../../assets/images/bgshape.png";
 import myimage from "../../../assets/images/myimage.png";
@@ -34,15 +34,27 @@ const Banner = () => {
             </span>
           </h2>
           <div className="flex justify-center md:justify-start gap-3 z-40">
-            <a className="cursor-pointer z-40">
+            <Link
+              target="blank"
+              to={"https://github.com/rakibjrb"}
+              className="cursor-pointer z-40"
+            >
+              <FaGithub className=" hover:text-white border border-[#23c0d2] w-12 h-12 p-3 rounded-full hover:bg-[#0077b5] hover:border-none transition-all duration-500" />
+            </Link>
+            <Link
+              target="blank"
+              to={"https://www.linkedin.com/in/rakibul-hasan-b156682b5"}
+              className="cursor-pointer z-40"
+            >
               <FaLinkedinIn className=" hover:text-white border border-[#23c0d2] w-12 h-12 p-3 rounded-full hover:bg-[#0077b5] hover:border-none transition-all duration-500" />
-            </a>
-            <a className="cursor-pointer z-40">
-              <MdOutlineEmail className=" hover:text-white border border-[#23c0d2] w-12 h-12 p-3 rounded-full hover:bg-red-400 hover:border-none transition-all duration-500" />
-            </a>
-            <a className="cursor-pointer z-40">
+            </Link>
+            <Link
+              target="blank"
+              to={"https://www.facebook.com/rakibulhasan572157"}
+              className="cursor-pointer z-40"
+            >
               <FaFacebookF className=" hover:text-white border border-[#23c0d2] w-12 h-12 p-3 rounded-full hover:bg-[#3b5998] hover:border-none transition-all duration-500" />
-            </a>
+            </Link>
           </div>
           <button className="z-40 btn uppercase bg-[#23c0d2] text-black hover:text-white transition-all duration-300">
             Hire Me

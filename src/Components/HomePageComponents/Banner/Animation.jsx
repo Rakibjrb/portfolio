@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 const Animation = () => {
-  const makeCircles = 100;
+  const makeCircles = 60;
   const arr = [...Array(makeCircles).keys()];
 
   useEffect(() => {
