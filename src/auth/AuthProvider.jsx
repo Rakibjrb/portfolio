@@ -50,6 +50,8 @@ const AuthProvider = ({ children }) => {
           .catch((err) => {
             console.log(err.message);
           });
+      } else {
+        localStorage.removeItem("token");
       }
     });
     return () => unSubscribe();

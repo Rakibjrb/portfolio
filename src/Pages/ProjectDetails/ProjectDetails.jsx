@@ -41,12 +41,12 @@ const ProjectDetails = () => {
     }
     axios
       .put(`/projects/add-like/${params.id}`, { like })
-      .then((res) => {
+      .then(() => {
         setLike(like + 1);
         alert("Thanks for Resected");
         setLiked(true);
       })
-      .catch((err) => {
+      .catch(() => {
         Swal.fire({
           icon: "error",
           title: "Oooops",
@@ -76,7 +76,10 @@ const ProjectDetails = () => {
           <img src={project?.image} alt={project?.project_name} />
           <div className="p-5 space-y-10">
             <div className="text-justify">
-              <p className="text-xl font-extrabold mb-2">Project Details</p>
+              <div className="mb-2 flex justify-between">
+                <h3 className="text-xl font-extrabold">Project Details</h3>
+                <h3 className="text-red-600">Date : {project?.date}</h3>
+              </div>
               {project?.details}
             </div>
             <div>

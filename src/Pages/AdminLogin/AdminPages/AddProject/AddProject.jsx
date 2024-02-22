@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import moment from "moment";
 import Swal from "sweetalert2";
 import axios from "axios";
 import { ImSpinner9 } from "react-icons/im";
@@ -53,6 +54,7 @@ const AddProject = () => {
       live_link: formData.live_link,
       client_code: formData.client_code,
       server_code: formData.server_code || "none",
+      date: moment().format("DD-MM-YYYY"),
     };
 
     axiosPublic

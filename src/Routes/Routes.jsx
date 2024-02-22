@@ -13,11 +13,13 @@ import Overview from "../Pages/AdminLogin/AdminPages/Overview/Overview";
 import AddProject from "../Pages/AdminLogin/AdminPages/AddProject/AddProject";
 import Contacts from "../Pages/AdminLogin/AdminPages/Contacts/Contacts";
 import Details from "../Pages/AdminLogin/AdminPages/Contacts/ContactDetails/Details";
+import PageNotFound from "./PageNotFound";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
+    errorElement: <PageNotFound />,
     children: [
       {
         path: "/",
