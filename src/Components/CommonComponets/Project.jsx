@@ -13,10 +13,12 @@ const Project = ({ project }) => {
       />
       <div className="text-white mt-4">
         <Link
-          className="hover:underline"
+          className="underline md:no-underline md:hover:underline"
           to={`/projects/details/${project?._id}`}
         >
-          <h3 className="text-4xl">{project?.project_name}</h3>
+          <h3 className="text-3xl text-center md:text-4xl">
+            {project?.project_name}
+          </h3>
         </Link>
         <div className="flex justify-center gap-4 mt-5">
           <div className="tooltip" data-tip="Visit Live Site">

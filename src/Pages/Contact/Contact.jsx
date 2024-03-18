@@ -51,7 +51,7 @@ const Contact = () => {
   return (
     <>
       <div
-        className="max-w-7xl mx-auto px-3 xl:px-0 h-[800px] md:h-[600px] flex justify-center items-center bg-gradient-to-b from-[#75e6f033] md:from-black to-[#75e6f0] md:to-[#75e6f0] rounded-b-full"
+        className="max-w-7xl mx-auto px-3 xl:px-0 h-[800px] md:h-[600px] flex justify-center items-center bg-gradient-to-b from-[#75e6f033] md:from-black to-[#75e6f0] md:to-[#75e6f0] rounded-b-full mb-10"
         data-aos="fade-down"
         data-aos-offset="300"
         data-aos-easing="ease-in-sine"

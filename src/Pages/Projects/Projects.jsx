@@ -5,7 +5,7 @@ import TabPanelProjects from "./TabPanelProjects/TabPanelProjects";
 import "react-tabs/style/react-tabs.css";
 import "./projects.css";
 
-const tabs = ["All", "MERN", "Front End", "Basic", "Pending"];
+const tabs = ["All", "Pending", "MERN", "Front End", "Basic"];
 
 const Projects = () => {
   return (
@@ -15,7 +15,7 @@ const Projects = () => {
         <Tabs>
           <TabList>
             {tabs.map((tabname, index) => (
-              <Tab key={`tabname${index}`}>{tabname}</Tab>
+              <Tab key={`tabname${index}`}>{tabname.toUpperCase()}</Tab>
             ))}
           </TabList>
           {tabs.map((tab, index) => (
