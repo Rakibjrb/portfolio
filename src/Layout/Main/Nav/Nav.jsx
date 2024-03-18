@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
@@ -26,6 +26,13 @@ const links = (
 const Nav = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [sticky, setSticky] = useState(false);
+  const mobileNavRef = useRef();
+
+  const handleClickOutside = (e) => {
+    if (mobileNavRef.current && !mobileNavRef.current.contains(e.target)) {
+      setMobileMenu(false);
+    }
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -35,7 +42,13 @@ const Nav = () => {
         setSticky(false);
       }
     });
-  }, []);
+    if (mobileMenu) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [mobileMenu]);
 
   return (
     <nav
@@ -65,6 +78,7 @@ const Nav = () => {
               {links}
             </ul>
             <ul
+              ref={mobileNavRef}
               className={`absolute right-0 ${
                 mobileMenu ? "top-20" : "-top-[9999px]"
               } bg-[#00000061] transition-all duration-300 z-50 w-[300px] text-center lg:hidden menu-vertical px-5 py-8 font-lato font-semibold uppercase border rounded-lg space-y-5`}

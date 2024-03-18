@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import SectionHeader from "../../CommonComponets/SectionHeader/SectionHeader";
 import Skill from "../../CommonComponets/Skill";
@@ -49,7 +48,7 @@ const professional = [
   },
 ];
 
-const Skills = ({ hiddenBtn }) => {
+const Skills = () => {
   return (
     <div className="max-w-7xl mx-auto font-lato px-5 xl:px-0 overflow-x-hidden">
       <SectionHeader title={"My Skills"} />
@@ -102,18 +101,6 @@ const Skills = ({ hiddenBtn }) => {
             ))}
           </div>
         </div>
-      </div>
-      <div
-        className={`${hiddenBtn ? "hidden" : ""} flex justify-center mt-16`}
-        data-aos="zoom-in-down"
-        data-aos-duration="800"
-      >
-        <Link
-          to={"/skills"}
-          className="btn text-black hover:text-white bg-[#00B6FF] uppercase hover:border hover:border-white"
-        >
-          View All
-        </Link>
       </div>
     </div>
   );

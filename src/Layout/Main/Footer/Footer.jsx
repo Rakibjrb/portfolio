@@ -5,8 +5,8 @@ const Footer = () => {
     <footer className="footer footer-center p-10 bg-[#484848] text-base-content rounded">
       <aside>
         <p className="text-xl">
-          Copyright © {moment().format("YYYY")} - All right reserved by ACME
-          Industries Ltd
+          Copyright © {moment().format("YYYY")} - All right reserved by
+          rakibul-dev
         </p>
       </aside>
     </footer>
