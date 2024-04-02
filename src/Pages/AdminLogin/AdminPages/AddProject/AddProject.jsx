@@ -94,7 +94,7 @@ const AddProject = () => {
               })}
             >
               <option value="frontend">Select Category</option>
-              <option value="Pending">Pending</option>
+              <option value="pending">Pending</option>
               <option value="frontend">Frond End</option>
               <option value="mern">MERN stack</option>
               <option value="basic">Basic</option>

@@ -45,6 +45,11 @@ const Sidebar = () => {
       icon: <BsBarChartFill className="link-child uppercase text-3xl " />,
     },
     {
+      name: "Projects",
+      link: "/dashboard/projects",
+      icon: <LuLayoutDashboard className="link-child uppercase text-3xl" />,
+    },
+    {
       name: "Add Project",
       link: "/dashboard/add-project",
       icon: <LuLayoutDashboard className="link-child uppercase text-3xl" />,

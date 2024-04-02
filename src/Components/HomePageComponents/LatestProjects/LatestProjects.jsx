@@ -10,7 +10,7 @@ const LatestProjects = () => {
   const { data: projects, isLoading } = useQuery({
     queryKey: ["projects"],
     queryFn: async () => {
-      const res = await axios.get("./projects");
+      const res = await axios.get("/latest-projects");
       return res.data;
     },
   });
