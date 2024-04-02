@@ -50,11 +50,6 @@ const Sidebar = () => {
       icon: <LuLayoutDashboard className="link-child uppercase text-3xl" />,
     },
     {
-      name: "Add Project",
-      link: "/dashboard/add-project",
-      icon: <LuLayoutDashboard className="link-child uppercase text-3xl" />,
-    },
-    {
       name: "Contacts",
       link: "/dashboard/contacts",
       icon: <MdOutlineContactMail className="link-child uppercase text-3xl" />,
