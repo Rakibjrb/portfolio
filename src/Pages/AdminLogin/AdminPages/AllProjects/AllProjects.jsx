@@ -1,11 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../../../hooks/axios/useAxiosPublic";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const AllProjects = () => {
   const axios = useAxiosPublic();
 
-  const { data: projects } = useQuery({
+  const { data: projects, refetch: reloadProjects } = useQuery({
     queryKey: ["get-all-projects-admin"],
     queryFn: async () => {
       const res = await axios.get("/projects/tabs/all");
@@ -13,7 +14,64 @@ const AllProjects = () => {
     },
   });
 
-  console.log(projects);
+  const swalFire = (value) =>
+    Swal.fire({
+      title: "Are you sure?",
+      text: `to make this is ${value} project?`,
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, make it!",
+    });
+
+  const makeOld = (id) => {
+    swalFire("old").then((result) => {
+      if (result.isConfirmed) {
+        axios
+          .put(`/change-type/${id}`, { type: "old" })
+          .then((res) => {
+            reloadProjects();
+            Swal.fire({
+              title: res.ok && "Success",
+              text: "Now this is an old project listed",
+              icon: "success",
+            });
+          })
+          .catch((err) => {
+            console.log(err.message);
+            Swal.fire({
+              icon: "warning",
+              title: "something went wrong !!!",
+            });
+          });
+      }
+    });
+  };
+
+  const makeLatest = (id) => {
+    swalFire("latest").then((result) => {
+      if (result.isConfirmed) {
+        axios
+          .put(`/change-type/${id}`, { type: "latest" })
+          .then((res) => {
+            reloadProjects();
+            Swal.fire({
+              title: res.ok && "Success",
+              text: "Now this is an latest project listed",
+              icon: "success",
+            });
+          })
+          .catch((err) => {
+            console.log(err.message);
+            Swal.fire({
+              icon: "warning",
+              title: "something went wrong !!!",
+            });
+          });
+      }
+    });
+  };
 
   return (
     <div className="px-3 py-4 font-lato">
@@ -57,11 +115,17 @@ const AllProjects = () => {
                   </td>
                   <th>
                     {project?.type === "latest" ? (
-                      <button className="btn bg-red-400 btn-sm uppercase text-sm text-black hover:text-white hover:border hover:border-white font-semibold">
+                      <button
+                        onClick={() => makeOld(project?._id)}
+                        className="btn bg-red-400 btn-sm uppercase text-sm text-black hover:text-white hover:border hover:border-white font-semibold"
+                      >
                         Old
                       </button>
                     ) : (
-                      <button className="btn bg-green-500 btn-sm uppercase text-sm text-black hover:text-white hover:border hover:border-white font-semibold">
+                      <button
+                        onClick={() => makeLatest(project?._id)}
+                        className="btn bg-green-500 btn-sm uppercase text-sm text-black hover:text-white hover:border hover:border-white font-semibold"
+                      >
                         Latest
                       </button>
                     )}
