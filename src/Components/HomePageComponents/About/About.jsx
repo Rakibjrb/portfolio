@@ -4,9 +4,11 @@ import { BiSupport } from "react-icons/bi";
 import image from "../../../assets/images/mypic2.jpg";
 import useAxiosPublic from "../../../hooks/axios/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
+import useLinks from "../../../hooks/useLinks";
 
 const About = () => {
   const axios = useAxiosPublic();
+  const links = useLinks();
   const { data: count } = useQuery({
     queryKey: ["alldocumentcount"],
     queryFn: async () => {
@@ -94,13 +96,13 @@ const About = () => {
             data-aos-duration="1000"
             className="flex gap-3 mt-10"
           >
-            <a
-              href="https://drive.google.com/file/d/1Qar9GnBcD6t23yml8KucbFCtPksb_tjK/view?usp=sharing"
+            <Link
+              to={links[2]?.link}
               target="blank"
               className="btn text-black hover:text-white bg-[#23c0d2] uppercase hover:border hover:border-white"
             >
               Download Resume
-            </a>
+            </Link>
             <Link
               to={"/education"}
               className="btn text-white hover:text-black uppercase border hover:bg-[#23c0d2] border-white"
