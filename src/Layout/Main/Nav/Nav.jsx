@@ -16,6 +16,9 @@ const links = (
       <NavLink to="/skills">Skills</NavLink>
     </li>
     <li className="hover:text-[#56cbf9] cursor-pointer text-[16px]">
+      <NavLink to="/blogs">Blogs</NavLink>
+    </li>
+    <li className="hover:text-[#56cbf9] cursor-pointer text-[16px]">
       <NavLink to="/education">Education</NavLink>
     </li>
     <li className="hover:text-[#56cbf9] cursor-pointer text-[16px]">

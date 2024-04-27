@@ -15,6 +15,7 @@ import Contacts from "../Pages/AdminLogin/AdminPages/Contacts/Contacts";
 import Details from "../Pages/AdminLogin/AdminPages/Contacts/ContactDetails/Details";
 import PageNotFound from "./PageNotFound";
 import AllProjects from "../Pages/AdminLogin/AdminPages/AllProjects/AllProjects";
+import Blogs from "../Pages/Blogs/Blogs";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "/projects/details/:id",
         element: <ProjectDetails />,
+      },
+      {
+        path: "/blogs",
+        element: <Blogs />,
       },
       {
         path: "/skills",
