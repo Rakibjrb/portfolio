@@ -1,11 +1,9 @@
-import BlogCard from "../../Components/CommonComponets/BlogCard";
+// import BlogCard from "../../Components/CommonComponets/BlogCard";
 
 const Sidebar = () => {
   return (
     <div className="space-y-8 sticky top-28">
       <h1 className="mb-6 text-3xl font-semibold text-white">Latest Blogs</h1>
-
-      <BlogCard />
 
       {/* four latest blogs */}
 

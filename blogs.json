@@ -1,0 +1,78 @@
+[
+  {
+    "title": "What is HTML?",
+    "description": "HTML stands for Hypertext Markup Language. It's the standard markup language used to create and design web pages. HTML provides the structure for web documents by using a system of tags and attributes to define elements within a page such as headings, paragraphs, images, links, and more. These elements are then interpreted by web browsers to render the content in a visually pleasing and functional manner for users to interact with. HTML works closely with other web technologies like CSS (Cascading Style Sheets) and JavaScript to enhance the appearance and behavior of web pages.",
+    "author": {
+      "name": "Rakibul Hasan",
+      "published_date": "01-02-24"
+    },
+    "thumbnail_image": "https://i.ibb.co/vXDH5xr/bg3.jpg",
+    "like": 1,
+    "comments": [
+      {
+        "commenter": {
+          "name": "Commenter Name",
+          "published_date": "01-02-24"
+        }
+      }
+    ],
+    "type": "latest"
+  },
+  {
+    "title": "What is CSS?",
+    "description": "CSS stands for Cascading Style Sheets. It's a style sheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG or XHTML). CSS defines how elements of a web page should be displayed, including aspects like layout, colors, fonts, and spacing. By separating the content of a webpage (defined by HTML) from its presentation (defined by CSS), developers can create more flexible and maintainable web pages. CSS allows for consistent styling across multiple pages of a website or even multiple websites, as style rules can be defined once and applied globally. CSS operates based on selectors, which target specific elements in an HTML document, and declarations, which define the styling properties for those elements. With CSS, designers can achieve a wide range of visual effects and layouts, making web pages more attractive and user-friendly. ",
+    "author": {
+      "name": "Rakibul Hasan",
+      "published_date": "02-02-24"
+    },
+    "thumbnail_image": "https://i.ibb.co/vXDH5xr/bg3.jpg",
+    "like": 1,
+    "comments": [
+      {
+        "commenter": {
+          "name": "Commenter Name",
+          "published_date": "05-02-24"
+        }
+      }
+    ],
+    "type": "latest"
+  },
+  {
+    "title": "What is HTML?",
+    "description": "HTML stands for Hypertext Markup Language. It's the standard markup language used to create and design web pages. HTML provides the structure for web documents by using a system of tags and attributes to define elements within a page such as headings, paragraphs, images, links, and more. These elements are then interpreted by web browsers to render the content in a visually pleasing and functional manner for users to interact with. HTML works closely with other web technologies like CSS (Cascading Style Sheets) and JavaScript to enhance the appearance and behavior of web pages.",
+    "author": {
+      "name": "Rakibul Hasan",
+      "published_date": "01-02-24"
+    },
+    "thumbnail_image": "https://i.ibb.co/vXDH5xr/bg3.jpg",
+    "like": 1,
+    "comments": [
+      {
+        "commenter": {
+          "name": "Commenter Name",
+          "published_date": "01-02-24"
+        }
+      }
+    ],
+    "type": "latest"
+  },
+  {
+    "title": "What is CSS?",
+    "description": "CSS stands for Cascading Style Sheets. It's a style sheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG or XHTML). CSS defines how elements of a web page should be displayed, including aspects like layout, colors, fonts, and spacing. By separating the content of a webpage (defined by HTML) from its presentation (defined by CSS), developers can create more flexible and maintainable web pages. CSS allows for consistent styling across multiple pages of a website or even multiple websites, as style rules can be defined once and applied globally. CSS operates based on selectors, which target specific elements in an HTML document, and declarations, which define the styling properties for those elements. With CSS, designers can achieve a wide range of visual effects and layouts, making web pages more attractive and user-friendly. ",
+    "author": {
+      "name": "Rakibul Hasan",
+      "published_date": "02-02-24"
+    },
+    "thumbnail_image": "https://i.ibb.co/vXDH5xr/bg3.jpg",
+    "like": 1,
+    "comments": [
+      {
+        "commenter": {
+          "name": "Commenter Name",
+          "published_date": "05-02-24"
+        }
+      }
+    ],
+    "type": "latest"
+  }
+]
