@@ -11,16 +11,18 @@ const AllBlogs = () => {
 
       {/* banner blog */}
 
-      <>
-        {!blogs ? (
-          <div className="py-10">
-            <h1 className="text-center">No Blogs are available</h1>
-          </div>
-        ) : (
-          <>
-            <BlogCard blog={blogs ? blogs[0] : {}} />
-
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <>
+          {!blogs ? (
+            <div className="py-10">
+              <h1 className="text-center">No Blogs are available</h1>
+            </div>
+          ) : (
             <>
+              <BlogCard blog={blogs ? blogs[0] : {}} />
+
               {isLoading ? (
                 <div className="mt-6 py-6">
                   <Loading />
@@ -38,9 +40,9 @@ const AllBlogs = () => {
                 </div>
               )}
             </>
-          </>
-        )}
-      </>
+          )}
+        </>
+      )}
     </>
   );
 };
