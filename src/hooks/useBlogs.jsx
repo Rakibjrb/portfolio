@@ -7,7 +7,7 @@ const useBlogs = (skip) => {
   const { data: blogs, isLoading } = useQuery({
     queryKey: ["get-blogs", skip],
     queryFn: async () => {
-      const res = await axios.get(`/api/blogs/all?skip=${skip * 9}`);
+      const res = await axios.get(`/blogs/all?skip=${skip * 9}`);
       return res.data;
     },
   });
