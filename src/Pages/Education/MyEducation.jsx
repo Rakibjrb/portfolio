@@ -35,15 +35,15 @@ const semesters = [
   },
 ];
 
-const cardPosition = [
-  "start",
-  "center",
-  "end",
-  "center",
-  "start",
-  "center",
-  "end",
-  "center",
+const placeTo = [
+  "justify-start",
+  "justify-center",
+  "justify-end",
+  "justify-center",
+  "justify-start",
+  "justify-center",
+  "justify-end",
+  "justify-center",
 ];
 
 const MyEducation = () => {
@@ -59,7 +59,7 @@ const MyEducation = () => {
           {semesters?.map((sem, index) => (
             <div
               key={sem + index + "semestercard"}
-              className={`flex ${`justify-${cardPosition[index]}`}`}
+              className={`flex ${placeTo[index]}`}
             >
               <div
                 data-aos="zoom-in-up"
