@@ -97,7 +97,7 @@ const About = () => {
             className="flex gap-3 mt-10"
           >
             <Link
-              to={links[2]?.link}
+              to={links[3]?.link}
               target="blank"
               className="btn text-black hover:text-white bg-[#23c0d2] uppercase hover:border hover:border-white"
             >

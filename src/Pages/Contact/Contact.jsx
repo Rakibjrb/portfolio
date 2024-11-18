@@ -57,7 +57,7 @@ const Contact = () => {
         data-aos-easing="ease-in-sine"
       >
         <div className="font-lato">
-          <SectionHeader title={"Get In Touch"} />
+          <SectionHeader title={"Contact Me"} />
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="flex flex-col md:flex-row gap-6">
               <div className="space-y-6 flex-1">
