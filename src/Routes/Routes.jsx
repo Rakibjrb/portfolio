@@ -17,6 +17,7 @@ import PageNotFound from "./PageNotFound";
 import AllProjects from "../Pages/AdminLogin/AdminPages/AllProjects/AllProjects";
 import Blogs from "../Pages/Blogs/Blogs";
 import Blog from "../Pages/Blogs/Blog/Blog";
+import MyBlogs from "../Pages/AdminLogin/AdminPages/MyBlogs/MyBlogs";
 
 const router = createBrowserRouter([
   {
@@ -108,6 +109,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoutes>
             <Details />
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "blogs",
+        element: (
+          <PrivateRoutes>
+            <MyBlogs />
           </PrivateRoutes>
         ),
       },

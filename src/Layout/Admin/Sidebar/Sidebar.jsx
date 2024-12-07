@@ -55,6 +55,11 @@ const Sidebar = () => {
       icon: <MdOutlineContactMail className="link-child uppercase text-3xl" />,
     },
     {
+      name: "Blogs",
+      link: "/dashboard/blogs",
+      icon: <LuLayoutDashboard className="link-child uppercase text-3xl" />,
+    },
+    {
       name: "Go Home",
       link: "/",
       icon: <FaHome className="link-child uppercase text-3xl " />,
