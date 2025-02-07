@@ -1,6 +1,6 @@
-import { useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { FaHeart } from "react-icons/fa";
+import { FaCode, FaHeart } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { IoMdShare } from "react-icons/io";
 import { TiInputChecked } from "react-icons/ti";
@@ -8,6 +8,7 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../hooks/axios/useAxiosPublic";
 import Loading from "../../Components/CommonComponets/Loading";
+import { CgWebsite } from "react-icons/cg";
 
 const ProjectDetails = () => {
   const [like, setLike] = useState(0);
@@ -62,74 +63,114 @@ const ProjectDetails = () => {
   };
 
   return (
-    <div className="max-w-3xl mx-auto px-3 my-16 xl:px-0 font-lato">
-      {isLoading ? (
-        <Loading />
-      ) : (
-        <div className="bg-white rounded-md text-black">
-          <div className="flex justify-between p-5">
-            <h2 className="text-2xl font-bold">{project?.project_name}</h2>
-            <h3 className="font-bold">
-              <span className="uppercase">{project?.category}</span> Project
-            </h3>
-          </div>
-          <img src={project?.image} alt={project?.project_name} />
-          <div className="p-5 space-y-10">
-            <div className="text-justify">
-              <div className="mb-2 flex justify-between">
-                <h3 className="text-xl font-extrabold">Project Details</h3>
-                <h3 className="text-red-600">Date : {project?.date}</h3>
+    <div className="bg-gradient-to-b from-[#fff] to-[#000000]">
+      <div className="max-w-3xl mx-auto px-3 my-0 xl:px-0 font-lato">
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <div className="bg-white rounded-md text-black">
+            <div className="flex justify-between p-5">
+              <h2 className="text-2xl font-bold">{project?.project_name}</h2>
+              <h3 className="font-bold">
+                <span className="uppercase">{project?.category}</span> Project
+              </h3>
+            </div>
+            <img src={project?.image} alt={project?.project_name} />
+            <div className="p-5 space-y-10">
+              <div className="text-justify">
+                <div className="mb-2 flex justify-between">
+                  <h3 className="text-xl font-extrabold">Project Details</h3>
+                  <h3 className="text-red-600">Date : {project?.date}</h3>
+                </div>
+                {project?.details}
               </div>
-              {project?.details}
-            </div>
-            <div>
-              <p className="text-xl font-extrabold">Features</p>
-              <ul className="mt-2 pl-4 space-y-2">
-                {project?.features?.map((feature, index) => (
-                  <li key={`feature${index}`}>
-                    <TiInputChecked className="text-2xl float-left" />
-                    {feature}
+              <div>
+                <p className="text-xl font-extrabold">Features</p>
+                <ul className="mt-2 pl-4 space-y-2">
+                  {project?.features?.map((feature, index) => (
+                    <li key={`feature${index}`}>
+                      <TiInputChecked className="text-2xl float-left" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p className="text-xl font-extrabold">Technologies</p>
+                <ul className="uppercase flex gap-4 flex-wrap mt-4">
+                  {project?.techstacks?.map((tech, index) => (
+                    <li
+                      key={`tech${index}`}
+                      className="bg-gray-200 py-1 px-4 rounded-3xl text-sm font-bold"
+                    >
+                      {tech}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <p className="text-xl font-extrabold">
+                  Additional Project Links
+                </p>
+                <ul className="uppercase flex gap-20 flex-wrap mt-4">
+                  <li className="pb-5 px-10 rounded-3xl text-sm">
+                    <div
+                      className="tooltip tooltip-bottom tooltip-open"
+                      data-tip="Visit Live Site"
+                    >
+                      <Link to={project?.live_link} target="blank">
+                        <CgWebsite className="text-4xl" />
+                      </Link>
+                    </div>
                   </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <p className="text-xl font-extrabold">Technologies</p>
-              <ul className="uppercase flex gap-4 flex-wrap mt-4">
-                {project?.techstacks?.map((tech, index) => (
-                  <li
-                    key={`tech${index}`}
-                    className="bg-gray-200 py-1 px-4 rounded-3xl text-sm font-bold"
-                  >
-                    {tech}
+                  <li className="pb-5 rounded-3xl text-sm">
+                    <div
+                      className="tooltip tooltip-bottom tooltip-open"
+                      data-tip="Client Code"
+                    >
+                      <Link to={project?.client_code} target="blank">
+                        <FaCode className="text-4xl" />
+                      </Link>
+                    </div>
                   </li>
-                ))}
-              </ul>
+                  <li className="pb-5 px-10 rounded-3xl text-sm">
+                    <div
+                      className="tooltip tooltip-bottom tooltip-open"
+                      data-tip="Server Code"
+                    >
+                      <Link to={project?.server_code} target="blank">
+                        <FaCode className="text-4xl" />
+                      </Link>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-          <div className="flex justify-between p-3">
-            <div className="flex items-center">
+            <div className="flex justify-between p-3">
+              <div className="flex items-center">
+                <button
+                  onClick={handleLike}
+                  className="cursor-pointer p-2 hover:shadow-black hover:shadow-xl flex justify-center items-center rounded-full"
+                >
+                  {liked ? (
+                    <FaHeart className={`text-3xl text-black`} />
+                  ) : (
+                    <FaRegHeart className={`text-3xl text-black`} />
+                  )}
+                </button>
+                <h2 className="text-3xl">{like}</h2>
+              </div>
               <button
-                onClick={handleLike}
+                onClick={handleShare}
                 className="cursor-pointer p-2 hover:shadow-black hover:shadow-xl flex justify-center items-center rounded-full"
               >
-                {liked ? (
-                  <FaHeart className={`text-3xl text-black`} />
-                ) : (
-                  <FaRegHeart className={`text-3xl text-black`} />
-                )}
+                <IoMdShare className="text-3xl text-black" />
               </button>
-              <h2 className="text-3xl">{like}</h2>
             </div>
-            <button
-              onClick={handleShare}
-              className="cursor-pointer p-2 hover:shadow-black hover:shadow-xl flex justify-center items-center rounded-full"
-            >
-              <IoMdShare className="text-3xl text-black" />
-            </button>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };
