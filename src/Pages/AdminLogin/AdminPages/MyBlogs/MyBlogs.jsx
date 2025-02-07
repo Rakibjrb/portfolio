@@ -1,16 +1,18 @@
 import { Link } from "react-router-dom";
 import useBlogs from "../../../../hooks/useBlogs";
 import Loading from "../../../../Components/CommonComponets/Loading";
+import AddBlog from "./AddBlog";
 
 const MyBlogs = () => {
   const { blogs, isLoading } = useBlogs(0);
 
   return (
-    <div className="w-full p-4">
+    <div className="w-full p-4 bg-[#34e5e853] min-h-screen">
       <h1 className="text-4xl uppercase text-center">My Blogs</h1>
       <div className="w-full xl:grid xl:grid-cols-6 xl:gap-4 py-4">
         <div className="xl:col-span-4">
           <h2 className="text-xl uppercase">Add a new blog</h2>
+          <AddBlog />
         </div>
 
         {/* fetch all blogs and show here */}

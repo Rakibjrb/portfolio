@@ -77,10 +77,10 @@ const AllProjects = () => {
     <div className="px-3 py-4 font-lato">
       <Link to={"/dashboard/add-project"}>
         <button className="py-3 rounded-lg w-full bg-green-500 text-xl font-semibold text-black hover:bg-gray-200 transition-all">
-          Add New Project
+          Add A New Project
         </button>
       </Link>
-      <div className="mt-8 w-full">
+      <div className="mt-4 w-full bg-[#18656a] rounded-lg">
         <div className=" overflow-x-auto overflow-y-hidden">
           <table className="table">
             {/* head */}
