@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import moment from "moment";
-import Swal from "sweetalert2";
-import axios from "axios";
 import { ImSpinner9 } from "react-icons/im";
 import Modal from "../../../../Components/CommonComponets/Modal";
 import useAxiosPublic from "../../../../hooks/axios/useAxiosPublic";
+import { uploadImage } from "../../../../utils/upload-image";
 import "./addproject.css";
 
 const AddProject = () => {
@@ -14,36 +13,14 @@ const AddProject = () => {
   const axiosPublic = useAxiosPublic();
 
   const onSubmit = async (formData) => {
-    const image = formData.image[0];
-    const imagesize = image.size / (1024 * 1024);
-
-    if (imagesize > 2) {
-      Swal.fire("Select image under 2MB");
-      return;
-    }
-
+    setLoading(true);
     const features = formData.features.split(",");
     const techstacks = formData.technologies.split(",");
 
-    const imgBody = new FormData();
-    imgBody.set("key", import.meta.env.VITE_imgbb_api);
-    imgBody.append("image", image);
-
-    setLoading(true);
-
-    const hostImg = async () => {
-      const res = await axios({
-        method: "post",
-        url: "https://api.imgbb.com/1/upload",
-        data: imgBody,
-      });
-      return res.data.data.url;
-    };
-
-    const imagelink = await hostImg();
+    const uploadedImage = await uploadImage(formData.image[0]);
 
     const project = {
-      image: imagelink,
+      image: uploadedImage.url,
       project_name: formData.name,
       details: formData.details,
       features,
