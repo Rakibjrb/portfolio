@@ -38,21 +38,21 @@ const Banner = () => {
           <div className="flex justify-center md:justify-start gap-3 z-40">
             <Link
               target="blank"
-              to={links[1]?.link}
+              to={links[0]?.link}
               className="cursor-pointer z-40"
             >
               <FaGithub className=" hover:text-white border border-[#23c0d2] w-12 h-12 p-3 rounded-full hover:bg-[#0077b5] hover:border-none transition-all duration-500" />
             </Link>
             <Link
               target="blank"
-              to={links[2]?.link}
+              to={links[1]?.link}
               className="cursor-pointer z-40"
             >
               <FaLinkedinIn className=" hover:text-white border border-[#23c0d2] w-12 h-12 p-3 rounded-full hover:bg-[#0077b5] hover:border-none transition-all duration-500" />
             </Link>
             <Link
               target="blank"
-              to={links[0]?.link}
+              to={links[2]?.link}
               className="cursor-pointer z-40"
             >
               <FaFacebookF className=" hover:text-white border border-[#23c0d2] w-12 h-12 p-3 rounded-full hover:bg-[#3b5998] hover:border-none transition-all duration-500" />
