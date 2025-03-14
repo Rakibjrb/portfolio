@@ -23,7 +23,9 @@ const Sidebar = () => {
         <Loading />
       ) : (
         <>
-          <BlogCard blog={latestBlogs ? latestBlogs[0] : {}} />
+          <div className="rounded-lg bg-gradient-to-b from-[#23c0d2] to-[#57706e]">
+            <BlogCard blog={latestBlogs ? latestBlogs[0] : {}} />
+          </div>
 
           {/* four latest blogs */}
 
@@ -43,7 +45,7 @@ const Sidebar = () => {
 
                 <div className="space-y-2 flex-1">
                   <Link to={`/blog/${blog._id}`}>
-                    <h2 className="mt-4 text-xl md:text-2xl font-bold hover:underline">
+                    <h2 className="mt-4 text-xl font-bold hover:underline">
                       {blog?.title}
                     </h2>
                   </Link>

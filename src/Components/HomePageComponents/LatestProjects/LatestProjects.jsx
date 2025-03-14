@@ -27,7 +27,8 @@ const LatestProjects = () => {
               key={project._id}
               data-aos="fade-up"
               data-aos-anchor-placement="top-center"
-              data-aos-duration="500"
+              // data-aos-duration="500"
+              className="rounded-lg bg-gradient-to-b from-[#23c0d2] to-[#5f7b80] hover:bg-gradient-to-b hover:from-[#fff] hover:to-[#000]"
             >
               <Project project={project} />
             </div>

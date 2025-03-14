@@ -21,7 +21,9 @@ const AllBlogs = () => {
             </div>
           ) : (
             <>
-              <BlogCard blog={blogs ? blogs[0] : {}} />
+              <div className="rounded-lg bg-gradient-to-b from-[#23c0d2] to-[#57706e]">
+                <BlogCard blog={blogs ? blogs[0] : {}} />
+              </div>
 
               {isLoading ? (
                 <div className="mt-6 py-6">
@@ -32,7 +34,7 @@ const AllBlogs = () => {
                   {blogs?.map((blog, index) => (
                     <div
                       key={blog + index + "news"}
-                      className="col-span-12 md:col-span-6"
+                      className="rounded-lg col-span-12 md:col-span-6 bg-gradient-to-b from-[#23c0d2] to-[#57706e]"
                     >
                       <BlogCard blog={blog} />
                     </div>

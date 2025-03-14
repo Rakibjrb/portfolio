@@ -1,14 +1,16 @@
 import { Outlet } from "react-router-dom";
 import Nav from "./Nav/Nav";
 import Footer from "./Footer/Footer";
+import Animation from "../../Components/CommonComponets/Animation";
 
 const Main = () => {
   return (
-    <div>
+    <>
+      <Animation />
       <Nav />
       <Outlet />
       <Footer />
-    </div>
+    </>
   );
 };
 

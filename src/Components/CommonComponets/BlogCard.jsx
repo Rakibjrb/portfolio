@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const BlogCard = ({ blog }) => {
   return (
-    <div className="space-y-4 text-white bg-gradient-to-b from-[#23c0d2] to-[#57706e] p-4 rounded-lg">
+    <div className="space-y-4 text-white p-4 rounded-lg">
       <img
         className="w-full rounded-xl"
         src={blog?.thumbnail_image || "https://i.ibb.co/vXDH5xr/bg3.jpg"}
@@ -11,7 +11,7 @@ const BlogCard = ({ blog }) => {
       />
 
       <Link to={`/blog/${blog?._id}`}>
-        <h2 className="mt-4 text-2xl md:text-3xl font-bold hover:underline">
+        <h2 className="mt-4 text-2xl font-bold hover:underline">
           {blog?.title}
         </h2>
       </Link>

@@ -26,7 +26,12 @@ const TabPanelProjects = ({ tab }) => {
       ) : projects?.length ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-4 pt-5 md:pt-0">
           {projects?.map((project) => (
-            <Project key={project._id} project={project} />
+            <div
+              key={project._id}
+              className="rounded-lg bg-gradient-to-b from-[#23c0d2] to-[#5f7b80] hover:bg-gradient-to-b hover:from-[#fff] hover:to-[#000]"
+            >
+              <Project project={project} />
+            </div>
           ))}
         </div>
       ) : (

@@ -23,12 +23,13 @@ const LatestBlogs = () => {
         <Loading />
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-4 pt-5 md:pt-0">
-          {projects?.map((blog) => (
+          {projects?.map((blog, index) => (
             <div
-              key={blog + "blog"}
+              key={blog + "blog" + index}
               data-aos="fade-up"
               data-aos-anchor-placement="top-center"
               data-aos-duration="500"
+              className="bg-gradient-to-b from-[#23c0d2] to-[#57706e]"
             >
               <BlogCard blog={blog} />
             </div>
@@ -40,7 +41,6 @@ const LatestBlogs = () => {
         <Link
           data-aos="fade-down"
           data-aos-anchor-placement="top-center"
-          data-aos-duration="500"
           to={"/blogs"}
           className="text-center text-xl px-4 py-1 rounded-md bg-[#4bbec7] text-black font-semibold uppercase"
         >

@@ -14,12 +14,12 @@ const semesters = [
     gpa: "3.31",
   },
   {
-    passed: "Running",
-    gpa: "Running",
+    passed: "Completed",
+    gpa: "3.67",
   },
   {
-    passed: "Incomming",
-    gpa: "Incomming",
+    passed: "Running",
+    gpa: "Running",
   },
   {
     passed: "Incomming",

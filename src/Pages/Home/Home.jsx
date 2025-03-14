@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <div>
       <Banner />
-      <div className="space-y-32 mt-32">
+      <div className="space-y-40 mt-32">
         <About />
         <LatestProjects />
         <Skills />
