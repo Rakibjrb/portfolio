@@ -7,6 +7,8 @@ import router from "./Routes/Routes.jsx";
 import AuthProvider from "./auth/AuthProvider.jsx";
 import "./index.css";
 
+location.replace("https://rakibul-dev.vercel.app");
+
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")).render(

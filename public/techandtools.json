@@ -2,79 +2,66 @@
   {
     "id": "01",
     "img": "https://github.com/Rakibjrb/portfolio/blob/master/src/assets/techandtools/html.png?raw=true",
-    "technology": "HTML",
-    "animation": "animate-down"
+    "technology": "HTML"
   },
   {
     "id": "02",
     "img": "https://github.com/Rakibjrb/portfolio/blob/master/src/assets/techandtools/css.png?raw=true",
-    "technology": "CSS",
-    "animation": "animate-up"
+    "technology": "CSS"
   },
   {
     "id": "03",
     "img": "https://github.com/Rakibjrb/portfolio/blob/master/src/assets/techandtools/javascript.png?raw=true",
-    "technology": "JavaScript",
-    "animation": "animate-down"
+    "technology": "JavaScript"
   },
   {
     "id": "04",
     "img": "https://github.com/Rakibjrb/portfolio/blob/master/src/assets/techandtools/react.png?raw=true",
-    "technology": "React",
-    "animation": "animate-up"
+    "technology": "React"
   },
   {
     "id": "05",
     "img": "https://github.com/Rakibjrb/portfolio/blob/master/src/assets/techandtools/firebase.png?raw=true",
-    "technology": "Firebase",
-    "animation": "animate-down"
+    "technology": "Firebase"
   },
   {
     "id": "06",
     "img": "https://github.com/Rakibjrb/portfolio/blob/master/src/assets/techandtools/tailwindcss.png?raw=true",
-    "technology": "Tailwindcss",
-    "animation": "animate-up"
+    "technology": "Tailwindcss"
   },
   {
     "id": "07",
     "img": "https://github.com/Rakibjrb/portfolio/blob/master/src/assets/techandtools/nodejs.png?raw=true",
-    "technology": "Node",
-    "animation": "animate-down"
+    "technology": "Node"
   },
   {
     "id": "077",
     "img": "https://github.com/Rakibjrb/portfolio/blob/master/src/assets/techandtools/express.png?raw=true",
-    "technology": "Express",
-    "animation": "animate-up"
+    "technology": "Express"
   },
   {
     "id": "08",
     "img": "https://github.com/Rakibjrb/portfolio/blob/master/src/assets/techandtools/mongodb.png?raw=true",
-    "technology": "MongoDB",
-    "animation": "animate-down"
+    "technology": "MongoDB"
   },
   {
     "id": "09",
     "img": "https://github.com/Rakibjrb/portfolio/blob/master/src/assets/techandtools/git.png?raw=true",
-    "technology": "Git",
-    "animation": "animate-up"
+    "technology": "Git"
   },
   {
     "id": "10",
     "img": "https://github.com/Rakibjrb/portfolio/blob/master/src/assets/techandtools/github.png?raw=true",
-    "technology": "Github",
-    "animation": "animate-down"
+    "technology": "Github"
   },
   {
     "id": "11",
     "img": "https://github.com/Rakibjrb/portfolio/blob/master/src/assets/techandtools/figma.png?raw=true",
-    "technology": "Figma",
-    "animation": "animate-up"
+    "technology": "Figma"
   },
   {
     "id": "12",
     "img": "https://github.com/Rakibjrb/portfolio/blob/master/src/assets/techandtools/chromeDev.png?raw=true",
-    "technology": "Chrome Dev Tools",
-    "animation": "animate-down"
+    "technology": "Chrome Dev Tools"
   }
 ]
